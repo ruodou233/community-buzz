@@ -1,16 +1,16 @@
 # community-buzz
 
-搜到的推荐文章不知道靠不靠谱？这个 skill 专门去爱好者社区挖真实讨论，只保留评论区讨论度高的内容，回复为零的一律排除——那是广告，不是口碑。
+搜到的推荐文章不知道靠不靠谱？这个 skill 专门去爱好者社区挖真实讨论，只保留评论区讨论度高的内容，回复为零的一律排除——没有讨论就没有可验证的口碑。
 
 ## 这是什么 / 解决什么问题
 
 网上搜产品推荐，十篇有八篇是软文。你让 AI 去搜，它也分不清哪些是真实讨论、哪些是没人看的广告帖，经常把阅读量高但零回复的内容当成参考。`community-buzz` 解决这个问题：它会根据产品品类自动选择最相关的爱好者社区（知乎/B站/什么值得买/V2EX/NGA/贴吧/耳机大家坛/Chiphell 等），多社区并行搜索，然后逐帖验证评论数和回复数，低于门槛的直接扔掉。最后从通过验证的帖子里提取社区共识、争议点和高赞反驳，交叉对比后输出结构化结论。
 
-可以独立使用，也被 smart-buyer 作为社区验证子流程调用。
+可以独立使用。与 [smart-buyer](https://github.com/ruodou233/smart-buyer) 的社区验证阶段方法论同源，但两者互不依赖、各自独立运行。
 
 ## 核心功能/亮点
 
-- 回复为零一律排除：不管内容写得多好，没人讨论就是软文/广告，不保留。
+- 回复为零一律排除：零回复未形成可验证的社区讨论，不作为口碑证据采信。
 - 讨论度量化门槛：不同平台有不同标准（B站评论>100 可接受、知乎回答>10 可接受、论坛回复>5 可接受），不是拍脑袋判断。
 - 多社区并行搜索：按品类从社区矩阵中选 3-5 个最相关的社区同时搜，不只盯一个平台。
 - 信号权重分明：评论区高赞反驳 > 楼主结论；多人独立报告同一问题 > 单人评测；"用了X个月后"的长期反馈 > 开箱第一印象。
@@ -29,7 +29,8 @@ git clone https://github.com/ruodou233/community-buzz.git ~/.claude/skills/commu
 Codex：
 
 ```bash
-git clone https://github.com/ruodou233/community-buzz.git ~/.agents/skills/community-buzz
+# clone 到你的 Agent skills 目录，例如 Claude Code：
+git clone https://github.com/ruodou233/community-buzz.git ~/.claude/skills/community-buzz
 ```
 
 其他支持 `SKILL.md` 的平台：放入其 skills 目录即可。
