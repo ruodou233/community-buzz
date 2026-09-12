@@ -1,4 +1,6 @@
-# community-buzz
+# 社区口碑与真实讨论｜Community Reviews & Discussions
+
+Find real user experiences, product comparisons, and disagreements in online communities, with links to the original discussions.
 
 想知道一个东西到底好不好用，去看看长期用它的人怎么说。`community-buzz` 帮 Agent 从知乎、B站、什么值得买、V2EX、NGA、贴吧和垂直论坛里找有内容的讨论，把具体体验、比较和争议捞出来，附上值得读的原帖。产品口碑、软件体验、技术路线的实践反馈，都可以这样查。
 
